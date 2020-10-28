@@ -1,0 +1,44 @@
+﻿@page
+@model AIROPORT.Pages.TypePlanes.CreateModel
+
+@{
+    ViewData["Title"] = "Создание типа";
+}
+
+<h1>Добавить</h1>
+
+<h4>тип самолета</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TypePlanes.NamePlane" class="control-label"></label>
+                <input asp-for="TypePlanes.NamePlane" class="form-control" />
+                <span asp-validation-for="TypePlanes.NamePlane" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypePlanes.DestinationPlane" class="control-label"></label>
+                <input asp-for="TypePlanes.DestinationPlane" class="form-control" />
+                <span asp-validation-for="TypePlanes.DestinationPlane" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypePlanes.limitationsPlane" class="control-label"></label>
+                <input asp-for="TypePlanes.limitationsPlane" class="form-control" />
+                <span asp-validation-for="TypePlanes.limitationsPlane" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

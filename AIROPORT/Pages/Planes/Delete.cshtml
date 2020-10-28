@@ -1,0 +1,76 @@
+﻿@page
+@model AIROPORT.Pages.Planes.DeleteModel
+
+@{
+    ViewData["Title"] = "удалить самолет";
+}
+
+<h1>Удалить?</h1>
+
+<h3>Вы уверены, что хотите этого?</h3>
+<div>
+    <h4>Самолет:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.PlaneMark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.PlaneMark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.CapacityPassengers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.CapacityPassengers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.Tonnage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.Tonnage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.TypePlane_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.TypePlane_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.TechnicalParameters)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.TechnicalParameters)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.HourceFlown)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.HourceFlown)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.DatelastRepair)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.DatelastRepair)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes.Staff_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.Staff_ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Planes.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>

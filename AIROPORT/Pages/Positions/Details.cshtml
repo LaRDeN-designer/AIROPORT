@@ -1,0 +1,43 @@
+﻿@page
+@model AIROPORT.Pages.Positions.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали должности";
+}
+
+<h1>Подробнее о</h1>
+
+<div>
+    <h4>должности:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.NamePosition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.NamePosition)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Duties)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Duties)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Requirements)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Requirements)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Positions.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

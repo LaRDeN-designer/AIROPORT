@@ -1,0 +1,64 @@
+﻿@page
+@model AIROPORT.Pages.Routes.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить рейс";
+}
+
+<h1>Удалить?</h1>
+
+<h3>Вы уверены, что хотите этого?</h3>
+<div>
+    <h4>Routes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.FlightDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.FlightDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.TimeDeparture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.TimeDeparture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Departure)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Departure)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Arrival)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Arrival)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Crew_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Crew_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Plane_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Plane_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.FlightTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.FlightTime)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Routes.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>

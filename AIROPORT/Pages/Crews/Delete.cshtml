@@ -1,0 +1,46 @@
+﻿@page
+@model AIROPORT.Pages.Crews.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить экипаж";
+}
+
+<h1>Удалить?</h1>
+
+<h3>Вы уверены, что хотите этого?</h3>
+<div>
+    <h4>Crews</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.HourceFlown)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.HourceFlown)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.CodeStaf1ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.CodeStaf1ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.CodeStaf2ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.CodeStaf2ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.CodeStaf3ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.CodeStaf3ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Crews.ID" />
+        <input type="submit" value="удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">вернуться к списку</a>
+    </form>
+</div>

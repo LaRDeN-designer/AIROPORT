@@ -1,0 +1,74 @@
+﻿@page
+@model AIROPORT.Pages.Planes.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить самолет";
+}
+
+<h1>Добавить</h1>
+
+<h4>Самолет</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Planes.PlaneMark" class="control-label"></label>
+                <input asp-for="Planes.PlaneMark" class="form-control" />
+                <span asp-validation-for="Planes.PlaneMark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.CapacityPassengers" class="control-label"></label>
+                <input asp-for="Planes.CapacityPassengers" class="form-control" />
+                <span asp-validation-for="Planes.CapacityPassengers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.Tonnage" class="control-label"></label>
+                <input asp-for="Planes.Tonnage" class="form-control" />
+                <span asp-validation-for="Planes.Tonnage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.TypePlane_ID" class="control-label"></label>
+                <input asp-for="Planes.TypePlane_ID" class="form-control" />
+                <span asp-validation-for="Planes.TypePlane_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.TechnicalParameters" class="control-label"></label>
+                <input asp-for="Planes.TechnicalParameters" class="form-control" />
+                <span asp-validation-for="Planes.TechnicalParameters" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.ReleaseDate" class="control-label"></label>
+                <input asp-for="Planes.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Planes.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.HourceFlown" class="control-label"></label>
+                <input asp-for="Planes.HourceFlown" class="form-control" />
+                <span asp-validation-for="Planes.HourceFlown" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.DatelastRepair" class="control-label"></label>
+                <input asp-for="Planes.DatelastRepair" class="form-control" />
+                <span asp-validation-for="Planes.DatelastRepair" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Planes.Staff_ID" class="control-label"></label>
+                <input asp-for="Planes.Staff_ID" class="form-control" />
+                <span asp-validation-for="Planes.Staff_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

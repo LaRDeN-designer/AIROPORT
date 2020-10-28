@@ -1,0 +1,52 @@
+﻿@page
+@model AIROPORT.Pages.Tickets.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить?</h1>
+
+<h3>Вы уверенны, что хотите этого?</h3>
+<div>
+    <h4>Tickets</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.NamePassenger)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.NamePassenger)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.PassportDataPassengers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.PassportDataPassengers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Airoport)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Airoport)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Route_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Route_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.CostTiket)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.CostTiket)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Tickets.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>

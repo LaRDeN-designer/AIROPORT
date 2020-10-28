@@ -1,0 +1,81 @@
+﻿@page
+@model AIROPORT.Pages.Crews.IndexModel
+
+@{
+    ViewData["Title"] = "Экипажи";
+}
+
+<h1>Экипажи</h1>
+
+<p>
+    <a asp-page="Create">Добавить экипаж</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Crews[0].HourceFlown)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crews[0].CodeStaf1ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crews[0].CodeStaf2ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crews[0].CodeStaf3ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Crews) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HourceFlown)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staffs.First(r => r.ID == item.CodeStaf1ID).NameStaff
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staffs.First(r => r.ID == item.CodeStaf2ID).NameStaff
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staffs.First(r => r.ID == item.CodeStaf3ID).NameStaff
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

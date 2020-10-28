@@ -1,0 +1,48 @@
+﻿@page
+@model AIROPORT.Pages.TypePlanes.IndexModel
+
+@{
+    ViewData["Title"] = "Типы самолетов";
+}
+
+<h1>Типы самолетов</h1>
+
+<p>
+    <a asp-page="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypePlanes[0].NamePlane)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypePlanes[0].DestinationPlane)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypePlanes[0].limitationsPlane)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TypePlanes) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamePlane)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationPlane)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.limitationsPlane)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

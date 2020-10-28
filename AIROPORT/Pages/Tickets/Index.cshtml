@@ -1,0 +1,60 @@
+﻿@page
+@model AIROPORT.Pages.Tickets.IndexModel
+
+@{
+    ViewData["Title"] = "Билеты";
+}
+
+<h1>Билеты</h1>
+
+<p>
+    <a asp-page="Create">Добавить новый билет</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].NamePassenger)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].PassportDataPassengers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Airoport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Route_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].CostTiket)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tickets) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamePassenger)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassportDataPassengers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airoport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Route_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostTiket)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

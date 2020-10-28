@@ -1,0 +1,61 @@
+﻿@page
+@model AIROPORT.Pages.Staffs.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали сотрудника";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>сотрудника:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.NameStaff)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.NameStaff)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.PassportData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.PassportData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staffs.position_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staffs.position_ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Staffs.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

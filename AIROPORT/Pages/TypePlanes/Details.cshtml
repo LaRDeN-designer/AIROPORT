@@ -1,0 +1,37 @@
+﻿@page
+@model AIROPORT.Pages.TypePlanes.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>типа самолета</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypePlanes.NamePlane)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypePlanes.NamePlane)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypePlanes.DestinationPlane)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypePlanes.DestinationPlane)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypePlanes.limitationsPlane)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypePlanes.limitationsPlane)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TypePlanes.ID">Изменить</a> |
+    <a asp-page="./Index">вернуться к списку</a>
+</div>

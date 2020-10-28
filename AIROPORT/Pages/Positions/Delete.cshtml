@@ -1,0 +1,46 @@
+﻿@page
+@model AIROPORT.Pages.Positions.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить должность";
+}
+
+<h1>Удалить?</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Должность:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.NamePosition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.NamePosition)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Duties)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Duties)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Requirements)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Requirements)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Positions.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Обратно к списку</a>
+    </form>
+</div>

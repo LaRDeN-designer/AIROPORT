@@ -1,0 +1,81 @@
+﻿@page
+@model AIROPORT.Pages.Staffs.IndexModel
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<h1>Сотрудники</h1>
+
+<p>
+    <a asp-page="Create">Добавить сотрудника</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].NameStaff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].PassportData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs[0].position_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Staffs) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameStaff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassportData)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Positions.First(r => r.ID == item.position_ID).NamePosition
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿@page
+@model AIROPORT.Pages.Routes.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить новый рейс";
+}
+
+<h1>Создание</h1>
+
+<h4>Рейса:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Routes.FlightDate" class="control-label"></label>
+                <input asp-for="Routes.FlightDate" class="form-control" />
+                <span asp-validation-for="Routes.FlightDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.TimeDeparture" class="control-label"></label>
+                <input asp-for="Routes.TimeDeparture" class="form-control" />
+                <span asp-validation-for="Routes.TimeDeparture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Departure" class="control-label"></label>
+                <input asp-for="Routes.Departure" class="form-control" />
+                <span asp-validation-for="Routes.Departure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Arrival" class="control-label"></label>
+                <input asp-for="Routes.Arrival" class="form-control" />
+                <span asp-validation-for="Routes.Arrival" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Crew_ID" class="control-label"></label>
+                <input asp-for="Routes.Crew_ID" class="form-control" />
+                <span asp-validation-for="Routes.Crew_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.Plane_ID" class="control-label"></label>
+                <input asp-for="Routes.Plane_ID" class="form-control" />
+                <span asp-validation-for="Routes.Plane_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routes.FlightTime" class="control-label"></label>
+                <input asp-for="Routes.FlightTime" class="form-control" />
+                <span asp-validation-for="Routes.FlightTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

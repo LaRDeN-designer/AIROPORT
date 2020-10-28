@@ -1,0 +1,61 @@
+﻿@page
+@model AIROPORT.Pages.Routes.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали рейса";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>рейса:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.FlightDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.FlightDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.TimeDeparture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.TimeDeparture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Departure)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Departure)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Arrival)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Arrival)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Crew_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Crew_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.Plane_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.Plane_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routes.FlightTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routes.FlightTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Routes.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

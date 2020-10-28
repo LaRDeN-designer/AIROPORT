@@ -1,0 +1,55 @@
+﻿@page
+@model AIROPORT.Pages.Tickets.EditModel
+
+@{
+    ViewData["Title"] = "Редактирование билета";
+}
+
+<h1>Изменение</h1>
+
+<h4>билета:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Tickets.ID" />
+            <div class="form-group">
+                <label asp-for="Tickets.NamePassenger" class="control-label"></label>
+                <input asp-for="Tickets.NamePassenger" class="form-control" />
+                <span asp-validation-for="Tickets.NamePassenger" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.PassportDataPassengers" class="control-label"></label>
+                <input asp-for="Tickets.PassportDataPassengers" class="form-control" />
+                <span asp-validation-for="Tickets.PassportDataPassengers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Airoport" class="control-label"></label>
+                <input asp-for="Tickets.Airoport" class="form-control" />
+                <span asp-validation-for="Tickets.Airoport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Route_ID" class="control-label"></label>
+                <input asp-for="Tickets.Route_ID" class="form-control" />
+                <span asp-validation-for="Tickets.Route_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.CostTiket" class="control-label"></label>
+                <input asp-for="Tickets.CostTiket" class="form-control" />
+                <span asp-validation-for="Tickets.CostTiket" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,50 @@
+﻿@page
+@model AIROPORT.Pages.Crews.EditModel
+
+@{
+    ViewData["Title"] = "Редактировать экипаж";
+}
+
+<h1>Редактировать</h1>
+
+<h4>экипаж:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Crews.ID" />
+            <div class="form-group">
+                <label asp-for="Crews.HourceFlown" class="control-label"></label>
+                <input asp-for="Crews.HourceFlown" class="form-control" />
+                <span asp-validation-for="Crews.HourceFlown" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crews.CodeStaf1ID" class="control-label"></label>
+                <input asp-for="Crews.CodeStaf1ID" class="form-control" />
+                <span asp-validation-for="Crews.CodeStaf1ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crews.CodeStaf2ID" class="control-label"></label>
+                <input asp-for="Crews.CodeStaf2ID" class="form-control" />
+                <span asp-validation-for="Crews.CodeStaf2ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Crews.CodeStaf3ID" class="control-label"></label>
+                <input asp-for="Crews.CodeStaf3ID" class="form-control" />
+                <span asp-validation-for="Crews.CodeStaf3ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

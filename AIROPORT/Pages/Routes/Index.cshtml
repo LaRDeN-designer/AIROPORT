@@ -1,0 +1,72 @@
+﻿@page
+@model AIROPORT.Pages.Routes.IndexModel
+
+@{
+    ViewData["Title"] = "Рейсы";
+}
+
+<h1>Рейсы</h1>
+
+<p>
+    <a asp-page="Create">Добавить новый</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].FlightDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].TimeDeparture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].Departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].Arrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].Crew_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].Plane_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes[0].FlightTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Routes) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeDeparture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crew_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plane_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightTime)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

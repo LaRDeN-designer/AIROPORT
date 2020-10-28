@@ -1,0 +1,43 @@
+﻿@page
+@model AIROPORT.Pages.Crews.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали экипажа";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>экипажа:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.HourceFlown)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.HourceFlown)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.CodeStaf1ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.CodeStaf1ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.CodeStaf2ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.CodeStaf2ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crews.CodeStaf3ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crews.CodeStaf3ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Crews.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к списку</a>
+</div>

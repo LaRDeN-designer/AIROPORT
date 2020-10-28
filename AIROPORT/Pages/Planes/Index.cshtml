@@ -1,0 +1,102 @@
+﻿@page
+@model AIROPORT.Pages.Planes.IndexModel
+
+@{
+    ViewData["Title"] = "Самолеты";
+}
+
+<h1>Список самолетов</h1>
+
+<p>
+    <a asp-page="Create">Добавить самолет</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].PlaneMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].CapacityPassengers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].Tonnage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].TypePlane)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].TechnicalParameters)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].HourceFlown)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].DatelastRepair)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes[0].Staff_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Planes) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaneMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CapacityPassengers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tonnage)
+            </td>
+            <td>
+                @{ 
+                    try
+                    {
+                        @Model.TypePlanes.First(r => r.ID == item.TypePlane_ID).NamePlane
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechnicalParameters)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HourceFlown)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatelastRepair)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staffs.First(r => r.ID == item.Staff_ID).NameStaff
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
